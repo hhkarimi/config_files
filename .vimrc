@@ -35,3 +35,5 @@ set nu
 " Let gf detect python files.
 filetype plugin on
 
+" Turn on search highlighting
+set hlsearch
