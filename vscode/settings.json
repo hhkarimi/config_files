@@ -93,11 +93,10 @@
 		"*.fdb_latexmk",
 		"*.snm",
 		"*.synctex(busy)",
-    "*.synctex.gz",
 		"*.synctex.gz(busy)",
 		"*.nav",
 		"*.vrb",
-    "*.xdv"
+	        "*.xdv"
 	],
 }
 
