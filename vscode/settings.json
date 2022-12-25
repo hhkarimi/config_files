@@ -1,0 +1,103 @@
+{
+   // "workbench.colorTheme": "Monokai",
+   // "python.defaultInterpreterPath": "/Users/hkarimi/.pyenv/versions/3.11.1/bin/python",
+
+ 	// Define which recipe is used by `latex-workshop.build#`. It also applies to auto build. Recipes are referred to by their names as defined in `#latex-workshop.latex.recipes`. Note there are two particular values: 
+	// - `first` means to use the first recipe in `latex-workshop.latex.recipes`;
+	// - `lastUsed` means to use the last run recipe.
+	"latex-workshop.latex.recipe.default": "first",
+
+	// Define LaTeX compiling recipes. Each recipe in the list is an object containing its name and the names of tools to be used sequentially, which are defined in `latex-workshop.latex.tools`. By default, the first recipe is used to compile the project. For details, please visit https://github.com/James-Yu/LaTeX-Workshop/wiki/Compile#latex-recipes.
+	"latex-workshop.latex.recipes": [
+		{
+			"name": "latexmk (xelatex)",
+			"tools": [
+				"xelatexmk"
+			]
+		},
+		{
+			"name": "latexmk 🔃",
+			"tools": [
+				"latexmk"
+			]
+		},
+		{
+			"name": "latexmk (latexmkrc)",
+			"tools": [
+				"latexmk_rconly"
+			]
+		},
+		{
+			"name": "latexmk (lualatex)",
+			"tools": [
+				"lualatexmk"
+			]
+		},
+		{
+			"name": "pdflatex ➞ bibtex ➞ pdflatex × 2",
+			"tools": [
+				"pdflatex",
+				"bibtex",
+				"pdflatex",
+				"pdflatex"
+			]
+		},
+		{
+			"name": "Compile Rnw files",
+			"tools": [
+				"rnw2tex",
+				"latexmk"
+			]
+		},
+		{
+			"name": "Compile Jnw files",
+			"tools": [
+				"jnw2tex",
+				"latexmk"
+			]
+		},
+		{
+			"name": "tectonic",
+			"tools": [
+				"tectonic"
+			]
+		}
+	],   
+    // When LaTeX auxiliary files should be deleted. The folder to be cleaned is defined in `latex-workshop.latex.outDir`.
+	// - `onFailed` cleans the project when compilation fails.
+	// - `onBuilt` cleans the project when compilation is done, whether successful or failed.
+	//  - never: Never clean the project
+	//  - onFailed: Clean compilation fails
+	//  - onBuilt: Clean after build, be it successful or not
+	"latex-workshop.latex.autoClean.run": "onBuilt",
+
+    // Files to clean. This property must be an array of strings. File globs such as `*.removeme`, `something?.aux` can be used. Users can also specify glob patterns like `emptyfolder*/` to remove empty folders. Non-empty folders will be ignored. The folder globs must end with a slash and the last path component must not contain the globstar `**`, otherwise the folders will not be removed. The following globs patterns are correct `['abc/', 'abc*/', '**/abc*/', 'abc/**/def/']` but these are not ['**', '**/', 'abc/**', 'abc/**/', 'abc/def**/', 'abc/d**ef/']`.
+	"latex-workshop.latex.clean.fileTypes": [
+		"*.aux",
+		"*.bbl",
+		"*.blg",
+		"*.idx",
+		"*.ind",
+		"*.lof",
+		"*.lot",
+		"*.out",
+		"*.toc",
+		"*.acn",
+		"*.acr",
+		"*.alg",
+		"*.glg",
+		"*.glo",
+		"*.gls",
+		"*.fls",
+		"*.log",
+		"*.fdb_latexmk",
+		"*.snm",
+		"*.synctex(busy)",
+    "*.synctex.gz",
+		"*.synctex.gz(busy)",
+		"*.nav",
+		"*.vrb",
+    "*.xdv"
+	],
+}
+
